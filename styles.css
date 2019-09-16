@@ -1,0 +1,17 @@
+header {
+    background-color: green;
+    width: 100%;
+}
+
+main {
+    display: inline-block;
+    vertical-align: top;
+    background-color: red;
+}
+
+aside {
+    display: inline-block;
+    vertical-align: top;
+    background-color: blue;
+    max-width: 402px;
+}
