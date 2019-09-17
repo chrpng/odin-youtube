@@ -9,15 +9,30 @@
 </head>
 <body>
     <header>
-        <nav>Youtube</nav>
+        <nav class="nav-container">
+            <div class="nav nav-left">
+                <img class="logo" src="images/yt_logo_rgb_light.png" alt="youtube logo">
+            </div>
+            <div class="nav nav-center">search</div>
+            <div class="nav nav-right">user</div>
+        </nav>
     </header>
-    <main>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/h6fcK_fRYaI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <details>Details</details>
-        <section class="comments">Comments</section>
-    </main>
-    <aside>
-        More Videos
-    </aside>
+
+    <section class="container">
+        <main>
+            <iframe src="https://www.youtube.com/embed/h6fcK_fRYaI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <section class="information"></section>
+            <section class="details">
+                <div class="description">
+                    The Egg
+                    <br><br>
+                    Story by Andy Weir</div>
+            </section>
+            <section class="comments">Comments</section>
+        </main><!--
+        --><aside>
+            More Videos
+        </aside>
+    </section>
 </body>
 </html>
