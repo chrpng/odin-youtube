@@ -52,35 +52,42 @@ table {
 Basic Skeleton Layout
 =========================================
 */
-.container {
-    /* margin: 0 auto; */
-}
 body {
-    text-align: center;
+    font-family: "Roboto", "YT Sans", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.container {
+    display: flex;
+    /* margin: 0 auto; */
+    justify-content: center;
 }
 header {
-    background-color: green;
     width: 100%;
 }
 main {
+    background-color: pink;
     vertical-align: top;
     display: inline-block;
-    background-color: red;
-    /* overflow: auto; */
-    width: 853px;
-    height: 100%;
+    padding-top: 24px;
+    padding-right: 24px;
+    margin-left: 24px;
+    /* width: 853px; */
+    /* height: 100%; */
+    /* flex: 1; */
 }
 aside {
-    /* float: right; */
-    /* vertical-align: top; */
     display: inline-block;
     background-color: blue;
+    min-width: 300px;
     width: 402px;
     height: 100%;
+    padding-top: 24px;
+    padding-right: 24px;
 }
 iframe {
-    width: 853px;
-    height: 480px;
+    width: calc((100vh - 402px)*16/9);
+    height: calc(100vh - 402px);
 }
 
 /*
@@ -90,19 +97,107 @@ Navbar
 */
 .nav-container {
     display: flex;
-}
-.nav {
+    align-items: center;
     height: 56px;
 }
 .nav-left {
+    background-color: #c2606a;
     flex: 0 0 300px;
+    text-align: left;
 }
 .logo {
     width: 80px;
 }
 .nav-center {
+    background-color: #60c270;
     flex: 1 1 400px;
+    text-align: center;
+}
+.search-bar {
+    height: 34px;
+    border-radius: 2px;
+    border: 1px solid #888888;
+    border-style: none;
+    font-family: "Roboto", Arial, sans-serif;
 }
 .nav-right {
+    background-color: #6082c2;
     flex: 0 0 300px;
+    text-align: right;
+}
+
+/*
+=========================================
+Information
+=========================================
+*/
+
+.title {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.information {
+    border-bottom: 1px solid gray;
+    padding: 10px 0;
+}
+
+.information time::before{
+    content: "\00b7";
+    padding-right: 0.3em;   
+}
+
+.subtitle {
+    color: #888888;
+}
+/*
+=========================================
+Details
+=========================================
+*/
+
+.details {
+    border-bottom: 1px solid gray;
+    padding: 10px 0;
+}
+.uploader-container {
+    display: flex;
+}
+.uploader-container button {
+    text-transform: uppercase;
+    background: red;
+    border-style: none;
+    color: white;
+    border-radius: 2px;
+    font-weight: 500;
+}
+.uploader-info {
+    flex: 1;
+}
+
+/*
+=========================================
+Comments
+=========================================
+*/
+
+.comments {
+    padding: 10px 0;
+}
+
+/*
+=========================================
+Aside
+=========================================
+*/
+
+.items .video{
+    padding-bottom: 10px;
+}
+.items .video:first-child {
+    padding-bottom: 10px;
+    border-bottom: 1px solid gray;
+}
+.items .video:nth-child(2) {
+    padding-top: 10px;
 }
