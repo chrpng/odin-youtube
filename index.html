@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=YT%20Sans%3A300%2C400%2C500%2C700" rel="stylesheet"> 
+    <link href="https://s.ytimg.com/yts/img/favicon-vfl8qSV2F.ico" rel="shortcut icon" type="image/x-icon">
     <title>Youtube</title>
 </head>
 <body>
@@ -14,15 +15,53 @@
     <header>
         <nav class="nav-container">
             <div class="nav-left">
+                <svg class="icon menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
                 <img class="logo" src="images/yt_logo_rgb_light.png" alt="youtube logo">
             </div>
             <div class="nav-center">
                 <form action="">
-                    <input type="text" class="search-bar">
-                    <input type="submit">
+                        <input type="text" class="search-bar" placeholder="Search"><!--
+                     --><button class="search-submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                            </svg>
+                        </button>
                 </form>
             </div>
-            <div class="nav-right">user</div>
+            <ul class="nav-right">
+                <li>
+                    <svg class="icon video-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4zM14 13h-3v3H9v-3H6v-2h3V8h2v3h3v2z"/>
+                    </svg>
+                </li>
+                <li>
+                    <svg class="icon apps-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/>
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                    </svg>
+                </li>
+                <!-- <li>
+                    <svg class="icon reply-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/>
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                    </svg>
+                </li> -->
+                <li>
+                    <svg class="icon reply-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M12.04 4C17 4 21 7.7 21 12.3c0 4.57-4 8.28-8.96 8.28-1.76 0-3.4-.47-4.8-1.28-.15-.1-.35-.1-.52-.04-1.58.68-2.8.88-3.45.93-.2 0-.34-.26-.22-.4.6-.9 1.08-1.8 1.43-2.5.1-.2.1-.46-.04-.65C3.58 15.4 3.1 13.9 3.1 12.3c0-4.6 4-8.3 8.94-8.3zm1.6 9.56v1.58c0 .17.22.25.34.13l3.43-3.34c.1-.07.1-.2 0-.27L14 8.32c-.12-.12-.33-.04-.33.13V10c0 .1-.07.18-.17.2-3.38.52-5.04 2.73-5.74 5.1-.06.2.2.34.32.2 1.3-1.42 3.05-2.1 5.4-2.13.1 0 .2.1.2.2z"/>
+                    </svg>
+                </li>
+                <li>
+                    <svg class="icon notification-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                    </svg>
+                </li>
+                <li>
+                    <img class="profile-icon user-icon" src="images/user-icon.png" alt="user-icon">
+                </li>
+            </ul>
         </nav>
     </header>
 
@@ -30,35 +69,215 @@
         <main>
             <iframe src="https://www.youtube.com/embed/h6fcK_fRYaI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <section class="information">
-                <div class="title">The Egg - A Short Story</div>
-                <span class="views subtitle">8,739,252 views</span>
-                <time class="subtitle">Published on Sep 1, 2019</time>
+                <h1>The Egg - A Short Story</h1>
+                <div class="subtitle-container">
+                    <div class="subtitle">
+                        <span class="views">8,739,252 views</span>
+                        <time>Published on Sep 1, 2019</time>
+                    </div>
+                    <div class="video-interaction interaction">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>
+                        <span>841K</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>
+                        <span>31K</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path d="M14 9V5l7 7-7 7v-4.1c-5 0-8.5 1.6-11 5.1 1-5 4-10 11-11z"/>
+                        </svg>
+                        <span>SHARE</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"/>
+                        </svg>
+                        <span>SAVE</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                        </svg>
+                    </div>
+                </div>
             </section>
             <section class="details">
                 <div class="uploader-container">
+                    <img class="profile-icon uploader-icon" src="images/uploader-icon.jpg" alt="uploader-icon">
                     <div class="uploader-info">
-                        <div class="channel-name">Kurzgesagt - In a Nutshell</div>
+                        <h2 class="channel-name">Kurzgesagt - In a Nutshell</h2>
                         <div class="channel-subcount">9.66M subscribers</div>
                     </div>
                     <button>Subscribe</button>
                 </div>
                 <div class="description">
                     The Egg
-                    <br><br>
-                    Story by Andy Weir</div>
+                    <br><br><br>
+                    Story by Andy Weir
+                </div>
+                <h3 class="description">SHOW MORE</h3>
+                
             </section>
-            <section class="comments">116,388 Comments</section>
+            <section class="comments-list-container">
+                <div class="comments-header">
+                    <span>116,388 Comments</span>
+                    <div>
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"/>
+                        </svg>
+                        <h2>SORT BY</h2>
+                    </div>
+                </div>
+                <div class="user-response-container">
+                    <img class="profile-icon commenter-icon" src="images/user-icon.png" alt="user-icon">
+                    <div class="user-response">
+                        <input type="textarea" placeholder="Add a public comment...">
+                        <button>Cancel</button>
+                        <button>Comment</button>
+                    </div>
+                </div>
+                <ul class="comments-list">
+                    <li class="comment-container">
+                        <img class="profile-icon commenter-icon" src="images/uploader-icon.jpg" alt="uploader-icon">
+                        <div class="comment-text-container">
+                            <div class="pinned">
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24">
+                                    <path d="M16 5h.99L17 3H7v2h1v7l-2 2v2h5v6l1 1 1-1v-6h5v-2l-2-2V5z"/>
+                                </svg>
+                                <span>Pinned by Kurzgesagt - In a Nutshell</span>
+                            </div>
+                            <div class="comment-poster uploader">
+                                <h2>Kurzgesagt - In a Nutshell
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                </h2>
+                                <span>3 weeks ago (edited)</span>
+                            </div>
+                            <div class="comment-content">
+                                A Big Thanks to Andy Weir for allowing us to use his story!<br>
+                                If you want to support us, please check out those beautiful Egg posters we made: <a href="http://shop.kurzgesagt.org">http://shop.kurzgesagt.org</a>
+                            </div>
+                            <div class="comment-interaction interaction">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                                    <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/>
+                                </svg>
+                                <span>26K</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                                    <path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/>
+                                </svg>
+                                <h3 class="reply-button">REPLY</h3>
+                            </div>
+                            <div class="comment-replies">
+                                <span>View 485 replies</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                    <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="comment-container">
+                        <img class="profile-icon commenter-icon" src="images/commenter-icon-1.jpg" alt="commenter-icon">
+                        <div class="comment-text-container">
+                            <div class="comment-poster">
+                                <h2>Chad Warden</h2>
+                                <span>3 weeks ago</span>
+                            </div>
+                            <div class="comment-content">
+                                Why did people dislike their own video though
+                            </div>
+                            <div class="comment-interaction interaction">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                                    <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/>
+                                </svg>
+                                <span>23K</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                                    <path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/>
+                                </svg>
+                                <span class="reply-button">REPLY</span>
+                            </div>
+                            <div class="comment-replies">
+                                <span>View 258 replies</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                    <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
         </main><!--
      --><aside>
-            Up Next
+            <div class="next-vid-options">
+                <span>Up Next</span>
+                <div class="autoplay">
+                    Autoplay
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
             <div class="items">
-                <div class="video">Video 1</div>
-                <div class="video">Video 2</div>
-                <div class="video">Video 3</div>
-                <div class="video">Video 4</div>
-                <div class="video">Video 5</div>
-                <div class="video">Video 6</div>
-                <div class="video">Video 7</div>
+                <div class="video">
+                    <img class="next-video-thumbnail" src="images/next-video.jpg" alt="next-video-thumbnail">
+                    <div class="next-video-description">
+                        <div class="next-video-title">Concentrate Your Mind ☯ Asian Lofi HipHop Mix</div>
+                        <div class="next-video-text">Uploader</div>
+                        <div class="next-video-text">74k views</div>
+                    </div>
+                </div>
+                <div class="video">
+                    <img class="next-video-thumbnail" src="images/next-video.jpg" alt="next-video-thumbnail">
+                    <div class="next-video-description">
+                        <div class="next-video-title">Concentrate Your Mind ☯ Asian Lofi HipHop Mix</div>
+                        <div class="next-video-text">Uploader</div>
+                        <div class="next-video-text">74k views</div>
+                    </div>
+                </div>
+                <div class="video">
+                    <img class="next-video-thumbnail" src="images/next-video.jpg" alt="next-video-thumbnail">
+                    <div class="next-video-description">
+                        <div class="next-video-title">Concentrate Your Mind ☯ Asian Lofi HipHop Mix</div>
+                        <div class="next-video-text">Uploader</div>
+                        <div class="next-video-text">74k views</div>
+                    </div>
+                </div>
+                <div class="video">
+                    <img class="next-video-thumbnail" src="images/next-video.jpg" alt="next-video-thumbnail">
+                    <div class="next-video-description">
+                        <div class="next-video-title">Concentrate Your Mind ☯ Asian Lofi HipHop Mix</div>
+                        <div class="next-video-text">Uploader</div>
+                        <div class="next-video-text">74k views</div>
+                    </div>
+                </div>
+                <div class="video">
+                    <img class="next-video-thumbnail" src="images/next-video.jpg" alt="next-video-thumbnail">
+                    <div class="next-video-description">
+                        <div class="next-video-title">Concentrate Your Mind ☯ Asian Lofi HipHop Mix</div>
+                        <div class="next-video-text">Uploader</div>
+                        <div class="next-video-text">74k views</div>
+                    </div>
+                </div>
+                <div class="video">
+                    <img class="next-video-thumbnail" src="images/next-video.jpg" alt="next-video-thumbnail">
+                    <div class="next-video-description">
+                        <div class="next-video-title">Concentrate Your Mind ☯ Asian Lofi HipHop Mix</div>
+                        <div class="next-video-text">Uploader</div>
+                        <div class="next-video-text">74k views</div>
+                    </div>
+                </div>
+                <div class="video">
+                    <img class="next-video-thumbnail" src="images/next-video.jpg" alt="next-video-thumbnail">
+                    <div class="next-video-description">
+                        <div class="next-video-title">Concentrate Your Mind ☯ Asian Lofi HipHop Mix</div>
+                        <div class="next-video-text">Uploader</div>
+                        <div class="next-video-text">74k views</div>
+                    </div>
+                </div>
+                <div class="video">
+                    <img class="next-video-thumbnail" src="images/next-video.jpg" alt="next-video-thumbnail">
+                    <div class="next-video-description">
+                        <div class="next-video-title">Concentrate Your Mind ☯ Asian Lofi HipHop Mix</div>
+                        <div class="next-video-text">Uploader</div>
+                        <div class="next-video-text">74k views</div>
+                    </div>
+                </div>
             </div>
         </aside>
     </section>

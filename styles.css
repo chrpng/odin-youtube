@@ -15,7 +15,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, button {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -52,33 +52,33 @@ table {
 Basic Skeleton Layout
 =========================================
 */
+* {
+    box-sizing: border-box;
+}
 body {
     font-family: "Roboto", "YT Sans", Arial, sans-serif;
-    font-size: 1rem;
+    font-size: 14px;
     font-weight: 400;
+    background: #f5f5f5;
 }
 .container {
     display: flex;
-    /* margin: 0 auto; */
     justify-content: center;
+    margin-top: 56px;
 }
 header {
     width: 100%;
 }
 main {
-    background-color: pink;
+    /* border: 1px solid pink; */
     vertical-align: top;
     display: inline-block;
     padding-top: 24px;
     padding-right: 24px;
     margin-left: 24px;
-    /* width: 853px; */
-    /* height: 100%; */
-    /* flex: 1; */
 }
 aside {
-    display: inline-block;
-    background-color: blue;
+    /* border: 1px solid black; */
     min-width: 300px;
     width: 402px;
     height: 100%;
@@ -86,8 +86,11 @@ aside {
     padding-right: 24px;
 }
 iframe {
-    width: calc((100vh - 402px)*16/9);
-    height: calc(100vh - 402px);
+    width: calc(100vw - 402px - 24px*3);
+    height: calc((100vw - 402px - 24px*3)*9/16);
+    max-height: calc(100vh - 200px);
+    max-width: calc((100vh - 200px)*16/9);
+    margin-bottom: 20px;
 }
 
 /*
@@ -95,35 +98,98 @@ iframe {
 Navbar
 =========================================
 */
+
 .nav-container {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
     height: 56px;
+    align-items: center;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
+
+/*
+=========================================
+Navbar left
+=========================================
+*/
 .nav-left {
-    background-color: #c2606a;
-    flex: 0 0 300px;
-    text-align: left;
+    display: flex;
+    align-items: center;
+    /* border: 1px solid #c2606a; */
 }
 .logo {
     width: 80px;
 }
+
+/*
+=========================================
+Navbar center
+=========================================
+*/
 .nav-center {
-    background-color: #60c270;
-    flex: 1 1 400px;
+    /* border: 1px solid #60c270; */
+    width: 45vw;
     text-align: center;
+    height: 100%;
+    position: relative;
+}
+.nav-center form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
 }
 .search-bar {
-    height: 34px;
-    border-radius: 2px;
-    border: 1px solid #888888;
-    border-style: none;
+    font-size: 16px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border: 1px solid #ccc;
     font-family: "Roboto", Arial, sans-serif;
+    padding: 6px 10px;
+    width: 75%;
 }
+.search-submit {
+    width: 50px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background: #f5f5f5;
+    padding: 2px 10px;
+    box-sizing: content-box;
+    border: 1px solid #ccc;
+    border-left: none;
+}
+.search-submit svg {
+    padding-top: 3px;
+    fill: #888;
+}
+.search-bar:focus {
+    box-shadow: inset 0 1px 1px 1px #aaa;
+}
+
+/*
+=========================================
+Navbar right
+=========================================
+*/
 .nav-right {
-    background-color: #6082c2;
-    flex: 0 0 300px;
+    /* border: 1px solid #6082c2; */
+    flex: 0 0 250px;
     text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-right li {
+    display: inline-block;
+}
+.nav-right .icon {
+    fill:#555;
 }
 
 /*
@@ -132,24 +198,32 @@ Information
 =========================================
 */
 
-.title {
-    font-size: 1.8rem;
+h1 {
+    font-size: 1.2rem;
     font-weight: 400;
+    margin-bottom: 15px;
 }
-
 .information {
-    border-bottom: 1px solid gray;
-    padding: 10px 0;
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 20px;
 }
-
 .information time::before{
     content: "\00b7";
-    padding-right: 0.3em;   
+    padding-right: 0.3em;
+}
+.subtitle-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.subtitle {
+    color: #666;
+    display: inline-block;
+}
+.video-interaction {
+    display: inline-block;
 }
 
-.subtitle {
-    color: #888888;
-}
 /*
 =========================================
 Details
@@ -157,22 +231,31 @@ Details
 */
 
 .details {
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #bbb;
     padding: 10px 0;
 }
 .uploader-container {
     display: flex;
-}
-.uploader-container button {
-    text-transform: uppercase;
-    background: red;
-    border-style: none;
-    color: white;
-    border-radius: 2px;
-    font-weight: 500;
+    align-items: center;
+    margin-bottom: 16px;
 }
 .uploader-info {
     flex: 1;
+}
+.channel-subcount {
+    font-size: 0.9em;
+    color: #666;
+}
+.video-interaction svg {
+    top: 6px;
+}
+.video-interaction span {
+    font-weight: 500;
+    margin-right: 20px;
+}
+.description {
+    margin-left: 64px;
+    margin-bottom: 12px;
 }
 
 /*
@@ -180,9 +263,126 @@ Details
 Comments
 =========================================
 */
+.comments-list-container {
+    padding: 20px 0;
+}
+.comments-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.comments-header div {
+    display: flex;
+    align-items: flex-end;
+}
+.comments-header span {
+    font-size: 1.1em;
+    margin-right: 20px;
+}
+.comments-header div svg {
+    fill: #666;
+}
+.comments-header div h2 {
+    color: #666;
+}
+.user-response-container {
+    display: flex;
+    align-items: flex-start;
+    /* border: 1px solid orange; */
+    margin-bottom: 20px;
+}
+.user-response {
+    width: 100%;
+    text-align: right;
+}
+.user-response input {
+    width: 100%;
+    border: none;
+    background: #f5f5f5;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 15px;
+    font-size: 1.05em;
+}
+.user-response input:focus {
+    outline: 0;
+    border: none;
+}
+.comment-container {
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.5em;
+    margin-bottom: 20px;
+}
+.comment-poster {
+    font-size: 0.9em;
+}
+.comment-poster.uploader {
+    display: inline-block;
+    vertical-align: middle;
+    fill: white;
+    color: white;
+}
+h2 {
+    display: inline-block;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+.comment-poster.uploader h2 {
+    padding: 0 7px;
+    background-color: #888;
+    border-radius: 15px;
+}
+.comment-poster span {
+    display: inline-block;
+    color: #888;
+}
+.uploader h2 svg {
+    position: relative;
+    top: 1px;
+}
+.comment-content {
+    margin-bottom: 8px;
+}
+.interaction span {
+    color: #888;
+    font-size: 0.9em;
+}
+.interaction svg {
+    fill: #888;
+    position: relative;
+    margin-right: 4px;
+}
+.comment-interaction span {
+    margin-right: 10px;
+}
+.comment-interaction svg {
+    top: 2px;
+}
+.comment-replies {
+    font-weight: 500;
+}
+.comment-replies svg {
+    position: relative;
+    top: 6px;
+}
 
-.comments {
-    padding: 10px 0;
+/*
+=========================================
+Pin
+=========================================
+*/
+.pinned {
+    color: #888;
+    font-size: 0.9em;
+    vertical-align: top;
+    margin-bottom: 8px;
+}
+.pinned .icon {
+    fill: #888;
+    margin-right: 0;
+    position: relative;
+    top: 2px;
 }
 
 /*
@@ -196,8 +396,178 @@ Aside
 }
 .items .video:first-child {
     padding-bottom: 10px;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #bbb;
 }
 .items .video:nth-child(2) {
     padding-top: 10px;
+}
+.next-vid-options {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 16px;
+}
+.next-vid-options span {
+    font-size: 1.1em;
+}
+.video {
+    display: flex;
+}
+.next-video-thumbnail {
+    width: 168px;
+}
+.next-video-description {
+    padding: 0 8px;
+    font-size: 0.95em;
+}
+.next-video-title {
+    font-size: 1.05em;
+    font-weight: 500;
+    padding-bottom: 8px;
+}
+.next-video-text {
+    color: #666;
+    margin-bottom: 5px;
+}
+.autoplay {
+    /* border: 1px solid black; */
+    display: inline-block;
+    position: relative;
+    font-size: .9em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #666;
+    width: 110px;
+}
+/*
+=========================================
+Autoplay slider
+=========================================
+*/
+.switch {
+    position: absolute;
+    top: -12px;
+    right: 0;
+    display: inline-block;
+    width: 38px;
+    height: 34px;
+}
+  
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider track */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+/* The moving slider */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 0px;
+    bottom: -4px;
+    box-shadow: 0 0 8px #aaa;
+    background-color: #888;
+    -webkit-transition: .12s;
+    transition: .12s;
+}
+  
+input:checked + .slider:before {
+    background-color: #2196F3;
+}
+  
+input:checked + .slider:before {
+    /* -webkit-transform: translateX(26px); */
+    /* -ms-transform: translateX(26px); */
+    transform: translateX(16px);
+}
+  
+  /* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/*
+=========================================
+Icons
+=========================================
+*/
+.profile-icon {
+    border-radius: 50%;
+    margin-right: 16px;
+}
+.icon {
+    fill:#555;
+    margin-right: 20px;
+}
+.menu-icon {
+    margin-left: 15px;
+    /* margin-right: 10px; */
+}
+.user-icon {
+    width: 32px;
+}
+.commenter-icon {
+    width: 40px;
+    margin-left: 8px;
+}
+.comments-header .icon {
+    margin-right: 5px;
+}
+
+/*
+=========================================
+Buttons
+=========================================
+*/
+button {
+    text-transform: uppercase;
+    border-style: none;
+    border-radius: 2px;
+    font-weight: 700;
+    padding: 12px 16px;
+}
+.uploader-container button {
+    background: #c70606;
+    color: white;
+}
+.user-response button:last-of-type {
+    color: white
+}
+.user-response button:first-of-type {
+    background: rgba(255, 255, 255, 0);
+    color: #666;
+}
+
+/*
+=========================================
+Headers
+=========================================
+*/
+h3 {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #888;
+}
+
+.reply-button {
+    display: inline;
+    margin-left: 20px;
 }
